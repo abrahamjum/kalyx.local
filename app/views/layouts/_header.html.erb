@@ -7,9 +7,11 @@
           <li class="nav-item">
             <a><%= link_to "Listings", listings_path, class:'nav-link' %></a>
           </li>
+          <% if user_signed_in? %>
           <li class="nav-item">
-            <a><%= link_to "Products", class:'nav-link' %></a>
+            <a><%= link_to "Dashboard", member_path(current_user), class:'nav-link' %></a>
           </li>
+          <% end %>
         </ul>
         <a><%= link_to "KALYX", root_path, class:'navbar-brand navbar-center' %></a>
         <ul class="navbar-nav navbar-right">

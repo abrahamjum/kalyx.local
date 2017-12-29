@@ -1,0 +1,74 @@
+<h1 class="text-center head-spacer">Listings</h1>
+
+<div class="container text-center">
+  <div>
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link" href="#">&laquo;</a>
+      </li>
+      <li class="page-item active">
+        <a class="page-link" href="#">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">4</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">5</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">&raquo;</a>
+      </li>
+    </ul>
+  </div>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Posted</th>
+        </tr>
+      </thead>
+      <% @listings.each do |t| %>
+      <tbody>
+        <tr class="table-default">
+          <td><%= link_to t.title, listing_path(t) %></td>
+          <td><%= link_to t.description, listing_path(t) %></td>
+          <td><%= link_to t.created_at, listing_path(t) %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+
+      <div>
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a class="page-link" href="#">&laquo;</a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">3</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">4</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">5</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">&raquo;</a>
+          </li>
+        </ul>
+      </div>
+</div>

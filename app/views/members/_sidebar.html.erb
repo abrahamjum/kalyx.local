@@ -4,17 +4,14 @@
         <li class="sidebar-brand">
             <a href="#"><%= @member.email %></a>
         </li>
-        <li>
-            <a href="#">Overview</a>
+        <li class="nav-item">
+          <a><%= link_to "Listings", listings_path, class:'nav-link' %></a>
         </li>
-        <li>
-            <a href="#">Create Listing</a>
+        <li class="nav-item">
+          <a><%= link_to "Add Listing", new_listing_path, class:'nav-link' %></a>
         </li>
-        <li>
-            <a href="#">Manage Listings</a>
-        </li>
-        <li>
-            <a href="#">Sign Out</a>
+        <li class="nav-item">
+          <a><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:'nav-link' %></a>
         </li>
       </ul>
   </div>

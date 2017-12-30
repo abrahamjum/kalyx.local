@@ -1,74 +1,26 @@
 <h1 class="text-center">Listings</h1>
 
-<div class="container text-center">
-  <div class="d-flex justify-content-center">
-    <ul class="pagination">
-      <li class="page-item disabled">
-        <a class="page-link" href="#">&laquo;</a>
-      </li>
-      <li class="page-item active">
-        <a class="page-link" href="#">1</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">2</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">3</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">4</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">5</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">&raquo;</a>
-      </li>
-    </ul>
-  </div>
+<div class="container">
+  <div class="d-flex justify-content-center"><%= paginate @listings %></div>
 
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Posted</th>
+          <th class="text-center">Title</th>
+          <th class="text-center">Description</th>
+          <th class="text-center">Posted</th>
         </tr>
       </thead>
       <% @listings.each do |t| %>
       <tbody>
         <tr class="table-default">
           <td><%= link_to t.title, listing_path(t) %></td>
-          <td><%= link_to t.description, listing_path(t) %></td>
-          <td><%= link_to t.created_at, listing_path(t) %></td>
+          <td><%= link_to truncate(t.description, length:220), listing_path(t) %></td>
+          <td><%= link_to t.created_at.strftime("%b %d, %y"), listing_path(t) %></td>
         </tr>
       </tbody>
       <% end %>
     </table>
 
-      <div class="d-flex justify-content-center">
-        <ul class="pagination">
-          <li class="page-item disabled">
-            <a class="page-link" href="#">&laquo;</a>
-          </li>
-          <li class="page-item active">
-            <a class="page-link" href="#">1</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">2</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">3</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">4</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">5</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">&raquo;</a>
-          </li>
-        </ul>
-      </div>
+  <div class="d-flex justify-content-center"><%= paginate @listings %></div>
 </div>

@@ -19,9 +19,6 @@
               <li class="nav-item">
                 <a><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:'nav-link' %></a>
               </li>
-              <li class="nav-item">
-                <a><%= link_to "Add Listing", new_listing_path, class:'nav-link' %></a>
-              </li>
             <% else %>
               <li class="nav-item">
                 <a><%= link_to "Login", new_user_session_path, class:'nav-link' %></a>
@@ -30,6 +27,9 @@
                 <a><%= link_to "Signup", new_user_registration_path, class:'nav-link' %></a>
               </li>
           <% end %>
+          <li class="nav-item">
+            <a><%= link_to "Contact", root_path, class:'nav-link' %></a>
+          </li>
           <!-- <li class="nav-item">
             <a><%= link_to "Contact", class:'nav-link' %></a>
           </li> -->

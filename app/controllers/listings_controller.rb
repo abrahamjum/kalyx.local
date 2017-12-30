@@ -1,15 +1,16 @@
 class ListingsController < ApplicationController
 
   def index
-    @listings = Listing.all.order("created_at DESC")
+    @listings = Listing.order("created_at DESC").page(params[:page]).per(20)
   end
 
   def new
     @listing = Listing.new
+    @member = current_user
   end
 
   def edit
-
+    @listing = Listing.find(params[:id])
   end
 
   def update
@@ -25,8 +26,10 @@ class ListingsController < ApplicationController
   end
 
   def destroy
+    @listing = Listing.find(params[:id])
+
     @listing.destroy
-    redirect_to root_path
+    redirect_to member_path(current_user)
   end
 
   def create
@@ -42,7 +45,8 @@ class ListingsController < ApplicationController
   private
 
     def listing_params
-      params.require(:listing).permit(:title, :description)
+      params.require(:listing).permit(:title, :description, :price, :location,
+      :zip_code, :crypto, :phone_number)
     end
 
 end

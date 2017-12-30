@@ -1,117 +1,33 @@
 <h1 class="text-center head-spacer">Welcome <%= @member.email %></h1>
 
+
+
 <div class="container">
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">Status</th>
-        <th scope="col">Manage</th>
-        <th scope="col">Listing Title</th>
-        <th scope="col">Listed Date</th>
-        <th scope="col">Listing ID</th>
+        <th scope="col" class="text-center">Status</th>
+        <th scope="col" class="text-center">Manage</th>
+        <th scope="col" class="text-center">Listing Title</th>
+        <th scope="col" class="text-center">Listed Date</th>
+        <th scope="col" class="text-center">Listing ID</th>
       </tr>
     </thead>
+<% @listings.each do |t| %>
     <tbody>
-      <tr class="table-success">
-        <th scope="row">Active</th>
-        <td>
-          <a href="#">Display</a>
-          <a href="#">Edit</a>
-          <a href="#">Delete</a>
+      <tr>
+        <th scope="row" class="text-center">Active</th>
+        <td class="text-center row">
+          <a href="#"><%= link_to "Display", listing_path(t) %></a>
+          <a href="#"><%= link_to "Delete", t, method: :delete %></a>
+          <a href="#"><%= link_to "Edit", edit_listing_path(t) %></a>
         </td>
-        <td>Posting Title 1</td>
-        <td>12/30/2017</td>
-        <td>239502</td>
-      </tr>
-      <tr class="table-success">
-        <th scope="row">Active</th>
-        <td>
-          <a href="#">Display</a>
-          <a href="#">Edit</a>
-          <a href="#">Delete</a>
-        </td>
-        <td>Posting Title 1</td>
-        <td>12/30/2017</td>
-        <td>239502</td>
-      </tr>
-      <tr class="table-success">
-        <th scope="row">Active</th>
-        <td>
-          <a href="#">Display</a>
-          <a href="#">Edit</a>
-          <a href="#">Delete</a>
-        </td>
-        <td>Posting Title 1</td>
-        <td>12/30/2017</td>
-        <td>239502</td>
-      </tr>
-      <tr class="table-success">
-        <th scope="row">Active</th>
-        <td>
-          <a href="#">Display</a>
-          <a href="#">Edit</a>
-          <a href="#">Delete</a>
-        </td>
-        <td>Posting Title 1</td>
-        <td>12/30/2017</td>
-        <td>239502</td>
-      </tr>
-      <tr class="table-danger">
-        <th scope="row">Inactive</th>
-        <td>
-          <a href="#">Display</a>
-          <a href="#">Edit</a>
-          <a href="#">Delete</a>
-        </td>
-        <td>Posting Title 1</td>
-        <td>12/30/2017</td>
-        <td>239502</td>
-      </tr>
-      <tr class="table-success">
-        <th scope="row">Active</th>
-        <td>
-          <a href="#">Display</a>
-          <a href="#">Edit</a>
-          <a href="#">Delete</a>
-        </td>
-        <td>Posting Title 1</td>
-        <td>12/30/2017</td>
-        <td>239502</td>
-      </tr>
-      <tr class="table-success">
-        <th scope="row">Active</th>
-        <td>
-          <a href="#">Display</a>
-          <a href="#">Edit</a>
-          <a href="#">Delete</a>
-        </td>
-        <td>Posting Title 1</td>
-        <td>12/30/2017</td>
-        <td>239502</td>
-      </tr>
-      <tr class="table-danger">
-        <th scope="row">Inactive</th>
-        <td>
-          <a href="#">Display</a>
-          <a href="#">Edit</a>
-          <a href="#">Delete</a>
-        </td>
-        <td>Posting Title 1</td>
-        <td>12/30/2017</td>
-        <td>239502</td>
-      </tr>
-      <tr class="table-danger">
-        <th scope="row">Inactive</th>
-        <td>
-          <a href="#">Display</a>
-          <a href="#">Edit</a>
-          <a href="#">Delete</a>
-        </td>
-        <td>Posting Title 1</td>
-        <td>12/30/2017</td>
-        <td>239502</td>
+        <td class="text-center"><%= t.title %></td>
+        <td class="text-center"><%= t.created_at.strftime("%b %d, %y") %></td>
+        <td class="text-center"><%= t.id %></td>
       </tr>
     </tbody>
+    <% end %>
   </table>
 </div>
 

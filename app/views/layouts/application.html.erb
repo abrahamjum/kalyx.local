@@ -13,7 +13,9 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    
+
+    <%= render 'layouts/footer' %>
+
     <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();

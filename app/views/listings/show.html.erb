@@ -1,4 +1,34 @@
-<h1>Show Listing</h1>
 
-<%= @listing.title %>
-<%= @listing.description %>
+
+<div class="container">
+  <div>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Index</a></li>
+      <li class="breadcrumb-item"><a href="#">Los Angeles</a></li>
+      <li class="breadcrumb-item active">Listing 1</li>
+    </ol>
+  </div>
+
+  <div class="col-md-8">
+    <h1><%= @listing.title %></h1>
+    <div><%= image_tag("cat1.jpg") %></div>
+    <p><%= @listing.description %></p>
+  </div>
+
+  <div class="col-md-4">
+    <h2>Sidebar Map</h2>
+    <div><%= image_tag("map1.jpg") %></div>
+  </div>
+
+  <div>
+    <p>
+      Post ID: 23853287591
+    </p>
+    <p>
+      Posted: 23 days ago
+    </p>
+    <p>
+      Updated: 37 minutes ago
+    </p>
+  </div>
+</div>

@@ -1,20 +1,118 @@
-<h1 class="text-center"><%= @member.email %>'s Dashboard</h1>
+<h1 class="text-center head-spacer">Welcome <%= @member.email %></h1>
 
 <div class="container">
-  <ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      Cras justo odio
-      <span class="badge badge-primary badge-pill">14</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      Dapibus ac facilisis in
-      <span class="badge badge-primary badge-pill">2</span>
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      Morbi leo risus
-      <span class="badge badge-primary badge-pill">1</span>
-    </li>
-  </ul>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Status</th>
+        <th scope="col">Manage</th>
+        <th scope="col">Listing Title</th>
+        <th scope="col">Listed Date</th>
+        <th scope="col">Listing ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-success">
+        <th scope="row">Active</th>
+        <td>
+          <a href="#">Display</a>
+          <a href="#">Edit</a>
+          <a href="#">Delete</a>
+        </td>
+        <td>Posting Title 1</td>
+        <td>12/30/2017</td>
+        <td>239502</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">Active</th>
+        <td>
+          <a href="#">Display</a>
+          <a href="#">Edit</a>
+          <a href="#">Delete</a>
+        </td>
+        <td>Posting Title 1</td>
+        <td>12/30/2017</td>
+        <td>239502</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">Active</th>
+        <td>
+          <a href="#">Display</a>
+          <a href="#">Edit</a>
+          <a href="#">Delete</a>
+        </td>
+        <td>Posting Title 1</td>
+        <td>12/30/2017</td>
+        <td>239502</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">Active</th>
+        <td>
+          <a href="#">Display</a>
+          <a href="#">Edit</a>
+          <a href="#">Delete</a>
+        </td>
+        <td>Posting Title 1</td>
+        <td>12/30/2017</td>
+        <td>239502</td>
+      </tr>
+      <tr class="table-danger">
+        <th scope="row">Inactive</th>
+        <td>
+          <a href="#">Display</a>
+          <a href="#">Edit</a>
+          <a href="#">Delete</a>
+        </td>
+        <td>Posting Title 1</td>
+        <td>12/30/2017</td>
+        <td>239502</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">Active</th>
+        <td>
+          <a href="#">Display</a>
+          <a href="#">Edit</a>
+          <a href="#">Delete</a>
+        </td>
+        <td>Posting Title 1</td>
+        <td>12/30/2017</td>
+        <td>239502</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">Active</th>
+        <td>
+          <a href="#">Display</a>
+          <a href="#">Edit</a>
+          <a href="#">Delete</a>
+        </td>
+        <td>Posting Title 1</td>
+        <td>12/30/2017</td>
+        <td>239502</td>
+      </tr>
+      <tr class="table-danger">
+        <th scope="row">Inactive</th>
+        <td>
+          <a href="#">Display</a>
+          <a href="#">Edit</a>
+          <a href="#">Delete</a>
+        </td>
+        <td>Posting Title 1</td>
+        <td>12/30/2017</td>
+        <td>239502</td>
+      </tr>
+      <tr class="table-danger">
+        <th scope="row">Inactive</th>
+        <td>
+          <a href="#">Display</a>
+          <a href="#">Edit</a>
+          <a href="#">Delete</a>
+        </td>
+        <td>Posting Title 1</td>
+        <td>12/30/2017</td>
+        <td>239502</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <%= render 'sidebar' %>
